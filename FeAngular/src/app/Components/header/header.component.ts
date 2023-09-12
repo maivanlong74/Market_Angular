@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit{
   ]
 
   currentUrl: string = '';
+
   currentIndex = 0;
 
   constructor() {

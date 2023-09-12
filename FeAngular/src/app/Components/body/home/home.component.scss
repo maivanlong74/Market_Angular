@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Dosis:wght@200&display=swap');
 
 .body-container {
   margin-top: 20px;
@@ -128,6 +129,11 @@
 
       .company-item {
         width: 40%;
+
+        .content-maker{
+          font-family: 'Dancing Script', cursive;
+          font-size: 40px;
+        }
 
         .list-product {
           width: 100%;
