@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap");
+
+.body-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: auto;
+
+  .content-top {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .content-body {
+    background: #dfe6e9;
+    border-radius: 10px;
+
+    .content-body-a {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      column-gap: 5px;
+      margin-bottom: 100px;
+
+      .content-img {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .img-item {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 20px;
+          border: 2px solid black;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.2s all ease;
+          }
+
+          .content-more {
+            color: white;
+            font-weight: 500;
+            padding: 10px 5px 10px 5px;
+            border: 1px solid wheat;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            text-decoration: none;
+            margin-left: -317px;
+            margin-top: 132px;
+            position: absolute;
+            z-index: 900;
+            opacity: 0;
+            transition: 0.2s all ease;
+          }
+        }
+
+        .img-item:hover {
+          img {
+            transform: scale(1.3);
+            filter: blur(10px);
+          }
+
+          .content-more {
+            opacity: unset;
+          }
+
+          .content-more:hover {
+            background: black;
+            padding: 13px 8px 13px 8px;
+          }
+        }
+      }
+
+      .content-info {
+        width: 55%;
+
+        .info-item {
+          width: 100%;
+          height: 100%;
+
+          .info-item-a {
+            width: 100%;
+            text-align: center;
+
+            h1 {
+              font-family: "Dosis", sans-serif;
+              font-weight: 800;
+            }
+          }
+
+          .info-item-b {
+            width: 80%;
+            margin-left: 10%;
+          }
+        }
+      }
+    }
+  }
+
+  .hr {
+    width: 100%;
+    border: 4px solid rgb(48, 44, 44);
+  }
+
+  .content-contact {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+
+    .info-company {
+      border: 1px solid black;
+      height: 40vh;
+      border-radius: 20px;
+      display: flex;
+
+      .company-item {
+        width: 40%;
+
+        .list-product {
+          width: 100%;
+          height: 83%;
+
+          ul {
+            list-style: none;
+            width: 80%;
+            height: 70%;
+            display: flex;
+            flex-wrap: wrap;
+
+            li{
+                margin-left: 30px;
+
+                a{
+                    text-decoration: none;
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: black;
+                }
+            }
+          }
+
+          .margin-left-30 {
+            font-weight: 800;
+            font-size: 15px;
+            margin-left: 30px;
+          }
+        }
+      }
+
+      .company-img {
+        width: 60%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
