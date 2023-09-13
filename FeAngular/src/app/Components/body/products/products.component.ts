@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
 
+  p: number = 1;
+
   Products = [
     {
       id: 1,

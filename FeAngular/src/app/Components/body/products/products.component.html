@@ -8,7 +8,7 @@
               <ng-template ngbNavContent>
                 <div class="new-content">
                     <ul>
-                      <li *ngFor="let dem of Products">
+                      <li *ngFor="let dem of Products | paginate: { itemsPerPage: 10, currentPage: p }">
                         <div class="img-product">
                           <img src={{dem.urlImg}} alt="">
                         </div>
@@ -22,6 +22,9 @@
                         </div>
                       </li>
                     </ul>
+                    <div class="listPage">
+                      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                 </div>
               </ng-template>
             </li>

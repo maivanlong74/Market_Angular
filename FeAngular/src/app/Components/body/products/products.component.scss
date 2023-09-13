@@ -52,13 +52,13 @@
 
       .new-content {
         width: 135vh;
-        height: 55vh;
+        height: 57vh;
         border-radius: 30px;
 
         ul {
           list-style: none;
           width: 100%;
-          height: 100%;
+          height: 90%;
           display: flex;
           flex-wrap: wrap;
           align-content: flex-start;
@@ -146,6 +146,11 @@
                 width: 75%;
             }
           }
+        }
+
+        .listPage{
+          height: 10%;
+          width: 100%;
         }
       }
     }
