@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,10 +29,6 @@ export class HomeComponent implements OnInit{
 
   currentIndex = 0;
 
-  constructor() {
-
-  }
-
   ngOnInit() {
       this.showNextUrl();
 
@@ -45,5 +41,14 @@ export class HomeComponent implements OnInit{
     this.currentUrl = this.imgUrl[this.currentIndex].url;
 
     this.currentIndex = (this.currentIndex + 1) % this.imgUrl.length;
+  }
+
+
+  constructor(private spinner: NgxSpinnerService){}
+  OpenSpinner(){
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000)
   }
 }
