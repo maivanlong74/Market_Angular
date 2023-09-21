@@ -1,18 +1,62 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit, AfterViewInit {
 
   p: number = 1;
+  GetId: string | null = null;
+  selectedMenuData: any[] = [];
+
+  constructor(){}
+
+  ClickGetId(id: string){
+    this.GetId = id;
+    this.update();
+  }
+
+  onChage(event: any){
+    const se = event.target?.value;
+    
+    if(se !== undefined){
+      this.ClickGetId(se);
+    }
+  }
+
+  ngOnInit() {
+      if(this.GetId === null){
+        this.GetId = this.Products.length > 0 ? this.Products[0].idMenuProducts : null;
+        this.update();
+      } 
+  }
+
+  ngAfterViewInit() {
+      if(this.GetId !== null){
+        const tsData = this.GetData(this.GetId);
+        this.selectedMenuData = tsData;
+      }
+  }
+  
+  update() {
+    if(this.GetId !== null){
+      const tsData = this.GetData(this.GetId);
+      this.selectedMenuData = tsData;
+      console.log("selectedMenuData", this.selectedMenuData)
+    }
+}
+
+  GetData(id: string){
+    const result = this.Products.find(item => item.idMenuProducts == id);
+    return result ? result.listProduct : [];
+  }
 
   Products = [
     {
       idMenuProducts: 'dt',
-      nameMenuOroducts: 'Đồ điện tử',
+      nameMenuProducts: 'Đồ điện tử',
       listProduct: [
         {
           idProduct: 1,
@@ -61,7 +105,7 @@ export class ProductsComponent {
 
     {
       idMenuProducts: 'ts',
-      nameMenuOroducts: 'Đồ trang sức',
+      nameMenuProducts: 'Đồ trang sức',
       listProduct: [
         {
           idProduct: 1,
@@ -110,7 +154,7 @@ export class ProductsComponent {
 
     {
       idMenuProducts: 'gd',
-      nameMenuOroducts: 'Đồ gia dụng',
+      nameMenuProducts: 'Đồ gia dụng',
       listProduct: [
         {
           idProduct: 1,

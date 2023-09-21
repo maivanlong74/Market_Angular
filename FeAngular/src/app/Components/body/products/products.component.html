@@ -21,19 +21,15 @@
           </li>
           <li>
             <label for="" class="name">Loại hình</label>
-            <select name="" id="" class="choose">
-              <option value="">Đồ điện tử</option>
-              <option value="">Đồ trang sức</option>
-              <option value="">Đồ gia dụng</option>
-              <option value="">Đồ nội thất</option>
+            <select name="" id="" class="choose" (change)="onChage($event)">
+              <option *ngFor="let n of Products" [value]="n.idMenuProducts">{{ n.nameMenuProducts }}</option>
             </select>
           </li>
           <li>
             <label for="" class="name">Mặt hàng</label>
             <select name="" id="" class="choose">
-              <option value="">Điện thoại</option>
-              <option value="">Máy tính</option>
-              <option value="">Phụ kiện</option>
+              <option value="">-- Chọn một mặt hàng --</option>
+              <option *ngFor="let dem1 of selectedMenuData" value="">{{ dem1.typeProducts }}</option>
             </select>
           </li>
           <li>
@@ -62,13 +58,13 @@
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
       <li class="menu"><b>Danh mục sản phẩm: </b></li>
       <li ngbNavItem *ngFor="let dem of Products">
-        <button ngbNavLink class="click-button">
-          {{ dem.nameMenuOroducts }}
+        <button ngbNavLink class="click-button" (click)="ClickGetId(dem.idMenuProducts)">
+          {{ dem.nameMenuProducts }}
         </button>
         <ng-template ngbNavContent>
           <div class="new-content">
             <ul>
-              <li *ngFor="let n of dem.listProduct | paginate : { itemsPerPage: 10, currentPage: p }" >
+              <li *ngFor="let n of selectedMenuData | paginate : { itemsPerPage: 10, currentPage: p }" >
                 <div class="list-all">
                   <div class="img-product">
                     <img [src]="n.urlImg" alt="" />
