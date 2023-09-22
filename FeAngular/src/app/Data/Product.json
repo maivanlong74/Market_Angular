@@ -2,6 +2,7 @@
     {
         "idMenuProducts": "dt",
         "nameMenuProducts": "Đồ điện tử",
+        "imgProducts": "https://www.thongtincongnghe.com/sites/default/files/images/2011/5/13/img-1305259868-1.jpg",
         "listProduct": [
           {
             "idProduct": 1,
@@ -51,6 +52,7 @@
     {
       "idMenuProducts": "ts",
       "nameMenuProducts": "Đồ trang sức",
+      "imgProducts": "https://thietkehomexinh.com/wp-content/uploads/2018/07/noi-that-phong-khach-hien-dai-91-768x439.jpg",
       "listProduct": [
         {
           "idProduct": 1,
@@ -93,13 +95,14 @@
           "nameProduct": "Bông tai Kim cương Vàng trắng 14K PNJ DDDDW001700",
           "moeny": "78.253.000 vnd",
           "urlImg": "https://cdn.pnj.io/images/thumbnails/485/485/detailed/86/gbddddw001700-bong-tai-kim-cuong-vang-trang-14k-pnj-01.png"
-        },
+        }
       ]
     },
 
     {
       "idMenuProducts": "gd",
       "nameMenuProducts": "Đồ gia dụng",
+      "imgProducts": "https://toplist.vn/images/800px/trang-suc-doji-172338.jpg",
       "listProduct": [
         {
           "idProduct": 1,
@@ -142,7 +145,7 @@
           "nameProduct": "Robot hút bụi lau nhà Lydsto G4",
           "moeny": "2.900.000 vnd", 
           "urlImg": "https://cdn.tgdd.vn/Products/Images/10139/308263/robot-hut-bui-lau-nha-lydsto-g4-1.jpg"
-        },
+        }
       ]
-    },
+    }
   ]

@@ -1,48 +1,54 @@
-{
-  "idMenuProducts": "dt",
-  "nameMenuProducts": "Đồ điện tử",
-  "listProduct": [
-    {
-      "idProduct": 1,
-      "typeProducts": "Computer",
-      "nameProduct": "Laptop Apple MacBook Air M1 2020",
-      "moeny": "22.000.000 vnd",
-      "urlImg": "https://images.pexels.com/photos/955405/pexels-photo-955405.jpeg?auto=compress&cs=tinysrgb&w=1600"
+Tôi cón code json:
+[
+  {
+      "idMenuProducts": "dt",
+      "nameMenuProducts": "Đồ điện tử",
+      "imgProducts": "https://www.thongtincongnghe.com/sites/default/files/images/2011/5/13/img-1305259868-1.jpg",
+      "listProduct": [
+        {
+          "idProduct": 1,
+          "typeProducts": "Computer",
+          "nameProduct": "Laptop Apple MacBook Air M1 2020",
+          "moeny": "22.000.000 vnd",
+          "urlImg": "https://images.pexels.com/photos/955405/pexels-photo-955405.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        },
+        {
+          "idProduct": 2,
+          "typeProducts": "Watch",
+          "nameProduct": "Đồng hồ MVW 42 mm Nam ML069-02",
+          "moeny": "790.000 vnd",
+          "urlImg": "https://cdn.tgdd.vn/Products/Images/7264/279661/mvw-ml069-02-nam-1.jpg"
+        },
+        {
+          "idProduct": 3,
+          "typeProducts": "Phone",
+          "nameProduct": "Điện thoại Samsung Galaxy A04 (3GB/32GB)",
+          "moeny": "22.000.000 vnd", 
+          "urlImg": "https://tse2.mm.bing.net/th?id=OIP.MowHG7vrBKRCHvD_jDqgbwHaI0&pid=Api&P=0&h=220"
+        },
+        {
+          "idProduct": 4,
+          "typeProducts": "Accessory",
+          "nameProduct": "Pin sạc dự phòng 7.500 mAh 10.5W AVA+ LA Y68",
+          "moeny": "22.000.000 vnd", 
+          "urlImg": "https://cdn.tgdd.vn/Products/Images/57/241167/ava-plus-y68-vang-1-org.jpg"
+        },
+        {
+          "idProduct": 5,
+          "typeProducts": "Phone",
+          "nameProduct": "Điện thoại iPhone 11 64GB",
+          "moeny": "22.000.000 vnd", 
+          "urlImg": "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg"
+        },
+        {
+          "idProduct": 6,
+          "typeProducts": "Television",
+          "nameProduct": "Smart Tivi NanoCell LG 4K 55 inch 55NANO76SQA",
+          "moeny": "11.000.000 vnd", 
+          "urlImg": "https://cdn.tgdd.vn/Products/Images/1942/278576/smart-nanocell-lg-4k-55-inch-55nano76sqa-1-2.jpg"
+        }
+      ]      
     },
-    {
-      "idProduct": 2,
-      "typeProducts": "Watch",
-      "nameProduct": "Đồng hồ MVW 42 mm Nam ML069-02",
-      "moeny": "790.000 vnd",
-      "urlImg": "https://cdn.tgdd.vn/Products/Images/7264/279661/mvw-ml069-02-nam-1.jpg"
-    },
-    {
-      "idProduct": 3,
-      "typeProducts": "Phone",
-      "nameProduct": "Điện thoại Samsung Galaxy A04 (3GB/32GB)",
-      "moeny": "22.000.000 vnd", 
-      "urlImg": "https://tse2.mm.bing.net/th?id=OIP.MowHG7vrBKRCHvD_jDqgbwHaI0&pid=Api&P=0&h=220"
-    },
-    {
-      "idProduct": 4,
-      "typeProducts": "Accessory",
-      "nameProduct": "Pin sạc dự phòng 7.500 mAh 10.5W AVA+ LA Y68",
-      "moeny": "22.000.000 vnd", 
-      "urlImg": "https://cdn.tgdd.vn/Products/Images/57/241167/ava-plus-y68-vang-1-org.jpg"
-    },
-    {
-      "idProduct": 5,
-      "typeProducts": "Phone",
-      "nameProduct": "Điện thoại iPhone 11 64GB",
-      "moeny": "22.000.000 vnd", 
-      "urlImg": "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg"
-    },
-    {
-      "idProduct": 6,
-      "typeProducts": "Television",
-      "nameProduct": "Smart Tivi NanoCell LG 4K 55 inch 55NANO76SQA",
-      "moeny": "11.000.000 vnd", 
-      "urlImg": "https://cdn.tgdd.vn/Products/Images/1942/278576/smart-nanocell-lg-4k-55-inch-55nano76sqa-1-2.jpg"
-    }
-  ]      
-},
+  ]
+Tôi có code ts:
+  Làm sao để tôi có in ra những typeProducts mà ko bị trùng lặp this.selectedTypeData = this.selectedMenuData;

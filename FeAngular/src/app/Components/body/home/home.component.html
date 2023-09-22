@@ -10,7 +10,7 @@
         <h1>Trung tâm thương mại lớn nhất cả nước</h1>
     </div>
     <div class="container content-body">
-        <div class="content-body-1 content-body-a">
+        <div class="content-body-a">
             <div class="content-img">
                 <div class="img-item">
                     <img src="https://www.thongtincongnghe.com/sites/default/files/images/2011/5/13/img-1305259868-1.jpg" alt="">
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="content-body-2 content-body-a">
+        <div class="content-body-a">
             <div class="content-info">
                 <div class="info-item">
                     <div class="info-item-a">
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="content-body-3 content-body-a">
+        <div class="content-body-a">
             <div class="content-img">
                 <div class="img-item">
                     <img src="https://toplist.vn/images/800px/trang-suc-doji-172338.jpg" alt="">
@@ -85,12 +85,7 @@
                 <div class="list-product">
                     <div class="list-menu">
                         <div class="show-menu">
-                            <a href="" class="menu-item">Đồ gia dụng</a>
-                            <a href="" class="menu-item">Đồ điện tử</a>
-                            <a href="" class="menu-item">Đồ trang sức</a>
-                            <a href="" class="menu-item">Đồ nội thất</a>
-                            <a href="" class="menu-item">Đồ may mặc</a>
-                            <a href="" class="menu-item">Đồ trang điểm</a>
+                            <a *ngFor="let n of Products" href="" class="menu-item">{{ n.nameMenuProducts }}</a>
                             <a routerLink="/product" class="menu-item" (click)="OpenSpinner()">Xem thêm ...</a>
                         </div>
                         <div class="show-menu">

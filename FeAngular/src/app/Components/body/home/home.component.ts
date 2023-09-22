@@ -1,40 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import dataBackground from "../../../Data/Image_Background.json"
+import ListProduct from '../../../Data/Product.json';
+interface dataBr {
+  id: number,
+  url: string
+}
+interface Categorys{
+  idMenuProducts: string;
+  nameMenuProducts: string;
+  listProduct: {
+    idProduct: number;
+    typeProducts: string;
+    nameProduct: string;
+    moeny: string;
+    urlImg: string
+  }[];
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  imgUrl = [
-    {
-      id: 1,
-      url: 'https://wallpapertag.com/wallpaper/full/9/a/b/353044-cat-background-1920x1080-for-windows-10.jpg',
-    },
-    {
-      id: 2,
-      url: 'https://www.hoiyeumeo.vn/public/upload/images/meo-tabby5a.jpg',
-    },
-    {
-      id: 3,
-      url: 'https://i.pinimg.com/originals/11/58/23/11582349014f3645fb7703fa8acaf7d7.jpg',
-    },
-    {
-      id: 4,
-      url: 'https://i.ytimg.com/vi/W-PBFMECvTE/maxresdefault.jpg',
-    },
-  ]
+  imgUrl: dataBr[] = [];
+  Products: Categorys[] = [];
 
   currentUrl: string = '';
 
   currentIndex = 0;
 
   ngOnInit() {
-      this.showNextUrl();
+    this.imgUrl = dataBackground;
+    this.Products = ListProduct;
 
-      setInterval(() => {
-        this.showNextUrl();
-      }, 3000);
+    this.showNextUrl();
+
+    setInterval(() => {
+      this.showNextUrl();
+    }, 3000);
   }
 
   showNextUrl() {
