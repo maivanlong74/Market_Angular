@@ -123,33 +123,8 @@
     border-radius: 20px;
     background:#dfe6e9;
 
-    .nav-tabs {
-      border-radius: 20px;
-      background: #b6c0cc;
-
-      .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      li {
-        margin-left: 10px;
-
-        .click-button {
-          border-radius: 5px;
-          border: 1px solid black;
-          color: black;
-        }
-
-        .active {
-          font-weight: 700;
-        }
-      }
-    }
-
     .tab-content {
-      height: 94%;
+      height: 100%;
       width: 100%;
       display: flex;
       justify-content: center;

@@ -11,25 +11,33 @@
   <div class="content-choose">
     <div class="choose-body">
       <div class="search-product">
-        <input type="text" value="" placeholder="...">
+        <input type="text" value="" placeholder="..." />
         <button type="button">Tìm kiếm</button>
       </div>
       <div class="all-chosse">
         <ul>
           <li>
-            <button class="button-click">Tất cả</button>
+            <button class="button-click" (click)="ClickAll()">Tất cả</button>
           </li>
           <li>
             <label for="" class="name">Loại hình</label>
             <select name="" id="" class="choose" (change)="onChage($event)">
-              <option *ngFor="let n of Products" [value]="n.idMenuProducts">{{ n.nameMenuProducts }}</option>
+              <option value="all" id="all">-- Tất cả --</option>
+              <option *ngFor="let n of Products" [value]="n.idMenuProducts">
+                {{ n.nameMenuProducts }}
+              </option>
             </select>
           </li>
           <li>
             <label for="" class="name">Mặt hàng</label>
-            <select name="" id="" class="choose">
-              <option value="">-- Chọn một mặt hàng --</option>
-              <option *ngFor="let dem1 of selectedMenuData" value="">{{ dem1.typeProducts }}</option>
+            <select name="" id="" class="choose" (change)="onChagee($event)">
+              <option value="null" id="null">-- Chọn một mặt hàng --</option>
+              <option
+                *ngFor="let dem1 of selectedTypeData"
+                [value]="dem1.typeProducts"
+              >
+                {{ dem1.typeProducts }}
+              </option>
             </select>
           </li>
           <li>
@@ -46,55 +54,48 @@
           </li>
         </ul>
       </div>
-      <div class="info-contact">
-
-      </div>
+      <div class="info-contact"></div>
     </div>
   </div>
 
-<!-- -------------------------------------------------------------------------- -->
+  <!-- -------------------------------------------------------------------------- -->
 
   <div class="content-show">
-    <ul ngbNav #nav="ngbNav" class="nav-tabs">
-      <li class="menu"><b>Danh mục sản phẩm: </b></li>
-      <li ngbNavItem *ngFor="let dem of Products">
-        <button ngbNavLink class="click-button" (click)="ClickGetId(dem.idMenuProducts)">
-          {{ dem.nameMenuProducts }}
-        </button>
-        <ng-template ngbNavContent>
-          <div class="new-content">
-            <ul>
-              <li *ngFor="let n of selectedMenuData | paginate : { itemsPerPage: 10, currentPage: p }" >
-                <div class="list-all">
-                  <div class="img-product">
-                    <img [src]="n.urlImg" alt="" />
-                    <div class="nameMenuProduct">
-                      <p>{{n.typeProducts}}</p>
-                    </div>
-                  </div>
-                  <div class="info-product">
-                    <div class="name-product">
-                      <p>{{ n.nameProduct }}</p>
-                    </div>
-                    <div class="moeny-product">
-                      <p>{{ n.moeny }}</p>
-                    </div>
-                    <div class="button-add">
-                      <a href="">Xem thêm</a>
-                      <a href="">Đặt mua</a>
-                    </div>
-                  </div>
+    <div class="tab-content">
+      <div class="new-content">
+        <ul class="new-content">
+          <li
+            *ngFor="
+              let n of selectedMenuData
+                | paginate : { itemsPerPage: 10, currentPage: p }
+            "
+          >
+            <div class="list-all">
+              <div class="img-product">
+                <img [src]="n.urlImg" alt="" />
+                <div class="nameMenuProduct">
+                  <p>{{ n.typeProducts }}</p>
                 </div>
-              </li>
-            </ul>
-            <div class="listPage">
-              <pagination-controls
-                (pageChange)="p = $event" ></pagination-controls>
+              </div>
+              <div class="info-product">
+                <div class="name-product">
+                  <p>{{ n.nameProduct }}</p>
+                </div>
+                <div class="moeny-product">
+                  <p>{{ n.moeny }}</p>
+                </div>
+                <div class="button-add">
+                  <a href="">Xem thêm</a>
+                  <a href="">Đặt mua</a>
+                </div>
+              </div>
             </div>
-          </div>
-        </ng-template>
-      </li>
-    </ul>
-    <div [ngbNavOutlet]="nav"></div>
+          </li>
+        </ul>
+        <div class="listPage">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

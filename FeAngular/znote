@@ -1,50 +1,48 @@
-Tôi có code html này:
-    <select name="" id="" class="choose" (change)="onChage($event)">
-        <option *ngFor="let n of Products" [value]="n.idMenuProducts">{{ n.nameMenuOroducts }}</option>
-    </select>
-Tôi có code ts này:
-GetId: string | null = null;
-selectedMenuData: any[] = [];
-
-constructor(){}
-
-ClickGetId(id: string){
-  this.GetId = id;
-  this.update();
-}
-
-onChage(event: any){
-  const se = event.target?.value;
-  
-  if(se !== undefined){
-    this.ClickGetId(se);
-  }
-}
-
-ngOnInit() {
-    if(this.GetId === null){
-      this.GetId = this.Products.length > 0 ? this.Products[0].idMenuProducts : null;
-      this.update();
-    } 
-}
-
-ngAfterViewInit() {
-    if(this.GetId !== null){
-      const tsData = this.GetData(this.GetId);
-      this.selectedMenuData = tsData;
+{
+  "idMenuProducts": "dt",
+  "nameMenuProducts": "Đồ điện tử",
+  "listProduct": [
+    {
+      "idProduct": 1,
+      "typeProducts": "Computer",
+      "nameProduct": "Laptop Apple MacBook Air M1 2020",
+      "moeny": "22.000.000 vnd",
+      "urlImg": "https://images.pexels.com/photos/955405/pexels-photo-955405.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "idProduct": 2,
+      "typeProducts": "Watch",
+      "nameProduct": "Đồng hồ MVW 42 mm Nam ML069-02",
+      "moeny": "790.000 vnd",
+      "urlImg": "https://cdn.tgdd.vn/Products/Images/7264/279661/mvw-ml069-02-nam-1.jpg"
+    },
+    {
+      "idProduct": 3,
+      "typeProducts": "Phone",
+      "nameProduct": "Điện thoại Samsung Galaxy A04 (3GB/32GB)",
+      "moeny": "22.000.000 vnd", 
+      "urlImg": "https://tse2.mm.bing.net/th?id=OIP.MowHG7vrBKRCHvD_jDqgbwHaI0&pid=Api&P=0&h=220"
+    },
+    {
+      "idProduct": 4,
+      "typeProducts": "Accessory",
+      "nameProduct": "Pin sạc dự phòng 7.500 mAh 10.5W AVA+ LA Y68",
+      "moeny": "22.000.000 vnd", 
+      "urlImg": "https://cdn.tgdd.vn/Products/Images/57/241167/ava-plus-y68-vang-1-org.jpg"
+    },
+    {
+      "idProduct": 5,
+      "typeProducts": "Phone",
+      "nameProduct": "Điện thoại iPhone 11 64GB",
+      "moeny": "22.000.000 vnd", 
+      "urlImg": "https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-trang-1-2-org.jpg"
+    },
+    {
+      "idProduct": 6,
+      "typeProducts": "Television",
+      "nameProduct": "Smart Tivi NanoCell LG 4K 55 inch 55NANO76SQA",
+      "moeny": "11.000.000 vnd", 
+      "urlImg": "https://cdn.tgdd.vn/Products/Images/1942/278576/smart-nanocell-lg-4k-55-inch-55nano76sqa-1-2.jpg"
     }
-}
-
-update() {
-  if(this.GetId !== null){
-    const tsData = this.GetData(this.GetId);
-    this.selectedMenuData = tsData;
-  }
-}
-
-GetData(id: string){
-  const result = this.Products.find(item => item.idMenuProducts == id);
-  return result ? result.listProduct : [];
-}
-
-Hàm onChage(event: any) tôi kiểm tra đã có giá trị khi nhập vào rồi, rồi hàm update() đưa ra đc list selectedMenuData rồi nhưng bên html ko hiển thị
+  ]      
+},
